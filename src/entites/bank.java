@@ -9,10 +9,6 @@ public class bank {
         return numberAccount;
     }
 
-    public void setNumberAccount(int numberAccount) {
-        this.numberAccount = numberAccount;
-    }
-
     public String getHolderAccount() {
         return holderAccount;
     }
@@ -25,10 +21,6 @@ public class bank {
         return balanceAccount;
     }
 
-    public void setBalanceAccount(double balanceAccount) {
-        this.balanceAccount = balanceAccount;
-    }
-
     public bank(int numberAccount, String holderAccount, double balanceAccount) {
         this.numberAccount = numberAccount;
         this.holderAccount = holderAccount;
@@ -36,7 +28,7 @@ public class bank {
     }
 
     public void withDrawBalance (double withdraw){
-         setBalanceAccount((balanceAccount -= withdraw) - 5);
+         balanceAccount -= withdraw + 5;
     }
     public void depositAccount (double balanceAccount){
         this.balanceAccount += balanceAccount;
