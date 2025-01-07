@@ -34,4 +34,11 @@ public class bank {
         this.holderAccount = holderAccount;
         this.balanceAccount = balanceAccount;
     }
+
+    public void withDrawBalance (double withdraw){
+         setBalanceAccount((balanceAccount -= withdraw) - 5);
+    }
+    public void depositAccount (double balanceAccount){
+        this.balanceAccount += balanceAccount;
+    }
 }

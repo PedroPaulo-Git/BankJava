@@ -20,28 +20,29 @@ public class Main {
         if (Objects.equals(deposit, "y")){
             System.out.print("Enter a initial deposit value : $");
             balanceAccount = sc.nextDouble();
+
         }
         else {
             balanceAccount = 0;
         }
-        bank bankaccount = new bank(numberAccount,holderAccount,balanceAccount);
+
+        bank bankAccount = new bank(numberAccount,holderAccount,balanceAccount);
         System.out.println("Account data: ");
-        System.out.println("Account " + numberAccount+", Holder: "+ holderAccount+ ", Balance: $" + balanceAccount);
+        System.out.println("Account " + bankAccount.getNumberAccount()+", Holder: "+ bankAccount.getHolderAccount()+ ", Balance: $" + bankAccount.getBalanceAccount());
 
         System.out.print("Enter a deposit value:");
-        balanceAccount += sc.nextDouble();
-
-        bankaccount.setBalanceAccount(balanceAccount);
+        balanceAccount = sc.nextDouble();
+        bankAccount.depositAccount(balanceAccount);
         System.out.println("Updated account data: ");
-        System.out.println("Account " + numberAccount+", Holder: "+ holderAccount+ ", Balance: $" + balanceAccount);
+        System.out.println("Account " + bankAccount.getNumberAccount()+", Holder: "+ bankAccount.getHolderAccount()+ ", Balance: $" + bankAccount.getBalanceAccount());
 
         System.out.print("Enter a withdraw value:");
-        balanceAccount -= sc.nextDouble();
-        bankaccount.setBalanceAccount(balanceAccount);
+        balanceAccount = sc.nextDouble();
+        bankAccount.withDrawBalance(balanceAccount);
+
+
         System.out.println("Updated account data: ");
-        System.out.println("Account " + numberAccount+", Holder: "+ holderAccount+ ", Balance: $" + balanceAccount);
-
-
+        System.out.println("Account " + bankAccount.getNumberAccount()+", Holder: "+ bankAccount.getHolderAccount()+ ", Balance: $" + bankAccount.getBalanceAccount());
 
 
     }
